@@ -11,22 +11,20 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package proj.herveyhall;
+package proj.herveyhall.user.service;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import proj.herveyhall.po.UserAccount;
+import proj.herveyhall.po.UserExtInfo;
 
-/**
- * @author HerveyHall
- */
-@EnableTransactionManagement
-@MapperScan({"proj.herveyhall.dao"})
-@SpringBootApplication
-public class Application {
+public interface IUserService {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+	UserAccount fetchUserAccountByLoginName(String loginName);
+
+	UserExtInfo loadUserExtInfo(Long userId);
+
+	UserAccount createUser(String loginName);
+
+	void createGenericUserAccount(String loginName);
+
+	void createInitialUserExtInfo(Long userId);
 }

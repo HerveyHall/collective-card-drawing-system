@@ -11,22 +11,15 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package proj.herveyhall;
+package proj.herveyhall.dao;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import proj.herveyhall.po.UserExtInfo;
 
 /**
  * @author HerveyHall
  */
-@EnableTransactionManagement
-@MapperScan({"proj.herveyhall.dao"})
-@SpringBootApplication
-public class Application {
+public interface UserExtInfoMapper extends BaseMapper<UserExtInfo> {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
 }

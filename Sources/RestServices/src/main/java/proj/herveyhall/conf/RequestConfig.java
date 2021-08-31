@@ -11,22 +11,20 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package proj.herveyhall;
+package proj.herveyhall.conf;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * @author HerveyHall
- */
-@EnableTransactionManagement
-@MapperScan({"proj.herveyhall.dao"})
-@SpringBootApplication
-public class Application {
+import proj.herveyhall.interceptor.AuthInterceptor;
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+@Configuration
+public class RequestConfig implements WebMvcConfigurer {
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(new AuthInterceptor());
+		WebMvcConfigurer.super.addInterceptors(registry);
 	}
 }

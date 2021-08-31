@@ -11,22 +11,28 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package proj.herveyhall;
+package proj.herveyhall.vo;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import java.io.Serializable;
 
-/**
- * @author HerveyHall
- */
-@EnableTransactionManagement
-@MapperScan({"proj.herveyhall.dao"})
-@SpringBootApplication
-public class Application {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Rsp<T> implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	private int code;
+
+	private String desc;
+
+	private T result;
+
+	private String exception;
 }
