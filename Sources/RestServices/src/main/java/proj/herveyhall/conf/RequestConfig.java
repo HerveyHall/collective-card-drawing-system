@@ -19,6 +19,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import proj.herveyhall.interceptor.AuthInterceptor;
 
+/**
+ * @author HerveyHall
+ */
 @Configuration
 public class RequestConfig implements WebMvcConfigurer {
 

@@ -21,6 +21,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author HerveyHall
+ */
 @Getter
 @Setter
 @NoArgsConstructor

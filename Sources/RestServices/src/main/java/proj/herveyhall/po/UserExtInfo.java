@@ -19,6 +19,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author HerveyHall
+ */
 @Getter
 @Setter
 @TableName("t_user_ext_info")

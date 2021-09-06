@@ -18,6 +18,9 @@ import java.math.BigDecimal;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author HerveyHall
+ */
 @Getter
 @Setter
 public class CardInfo {

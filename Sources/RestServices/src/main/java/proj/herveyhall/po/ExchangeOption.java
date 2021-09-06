@@ -16,6 +16,9 @@ package proj.herveyhall.po;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author HerveyHall
+ */
 @Getter
 @Setter
 public class ExchangeOption {
